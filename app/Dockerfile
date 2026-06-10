@@ -1,4 +1,4 @@
-FROM amazoncorretto:17-jre
+FROM amazoncorretto:21-jre
 
 WORKDIR /app
 
