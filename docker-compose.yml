@@ -6,7 +6,7 @@ services:
     expose:
       - "8277"
     environment:
-      JAVA_TOOL_OPTIONS: "-Xms512m -Xmx880m -XX:+UseG1GC -Djava.io.tmpdir=/tmp"
+      JAVA_TOOL_OPTIONS: "-Xms512m -Xmx1024m -XX:+UseG1GC -Djava.io.tmpdir=/tmp"
 
   nginx:
     image: nginx:alpine
