@@ -6,10 +6,15 @@ services:
     expose:
       - "8277"
     environment:
-      JAVA_TOOL_OPTIONS: "-Xms512m -Xmx880m -XX:+UseG1GC -Djava.io.tmpdir=/tmp"
+      - JAVA_TOOL_OPTIONS=-Xms512m -Xmx880m -XX:+UseG1GC -Djava.io.tmpdir=/tmp
       - NLS_LANG=JAPANESE_JAPAN.AL32UTF8
       - NLS_NCHAR=AL32UTF8
-
+      - LD_LIBRARY_PATH=/usr/lib/oracle/23/client64/lib
+    volumes:
+      - /usr/lib/oracle:/usr/lib/oracle:ro,z
+      - /etc/odbc.ini:/etc/odbc.ini:ro,z
+      - /etc/odbcinst.ini:/etc/odbcinst.ini:ro,z
+ 
   nginx:
     image: nginx:alpine
     container_name: myapp-nginx
