@@ -7,6 +7,8 @@ services:
       - "8277"
     environment:
       JAVA_TOOL_OPTIONS: "-Xms512m -Xmx880m -XX:+UseG1GC -Djava.io.tmpdir=/tmp"
+      - NLS_LANG=JAPANESE_JAPAN.AL32UTF8
+      - NLS_NCHAR=AL32UTF8
 
   nginx:
     image: nginx:alpine
